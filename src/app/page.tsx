@@ -38,7 +38,7 @@ export default function Home() {
                 <ol>
                   {section.items.map((item) => {
                     /* this code is broken by the compiler */
-                    const index = agg.itemIndex++;
+                    const count = agg.itemCounter++;
 
                     /* this code works as expected */
                     // const index = agg.itemIndex;
@@ -47,7 +47,7 @@ export default function Home() {
                     return (
                       <li key={item.id}>
                         <p>Item: {item.name}</p>
-                        <p>Index: {index}</p>
+                        <p>Count: {count}</p>
                       </li>
                     );
                   })}
@@ -58,7 +58,7 @@ export default function Home() {
           },
           {
             sections: [] as ReactNode[],
-            itemIndex: 1,
+            itemCounter: 1,
           },
         ).sections
       }
